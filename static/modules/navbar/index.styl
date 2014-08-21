@@ -1,0 +1,27 @@
+.navbar
+  display:block
+  height:7em
+  width:$baseWidth
+  margin:0 auto
+  position:relative
+  .nav-list
+    position:absolute
+    bottom:0.5em
+    right:0em
+    .nav-item
+      display:inline-block
+      text-align:center
+      margin:0 0 0 1.5em
+      &.selected
+        a
+          color:$themeColor
+          .icon
+            font-size:2em
+      a
+        color:darken($grayLighter,20%)
+        transition(color .3s ease-out)
+        .icon
+          font-size:1.5em
+          line-height:1
+        &:hover
+          color:lighten($themeColor,30%)

@@ -1,0 +1,7 @@
+meta(charset="utf-8")
+meta(name="viewport",content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no")
+if __env.NODE_ENV === 'production'
+  script(type='text/javascript',src="/js/common.min.js")
+else
+  script(type='text/javascript',src="/js/common/main.js")
+script(type='text/javascript',src="/externals/jade/runtime.js")

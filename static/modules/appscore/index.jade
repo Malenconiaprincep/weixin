@@ -1,0 +1,11 @@
+mixin appscore(score)
+    div.appscore(data-module="appscore")
+      - var i = parseInt(score/1);
+      - var j = score%1;
+      - var k = 5 - Math.ceil(score);
+      - for (var n = 0; n < i; n++)
+        small.icon.icon-star
+      if j
+        small.icon.icon-halfstar
+      - for (var m = 0; m < k; m++)
+        small.icon.icon-emptystar
