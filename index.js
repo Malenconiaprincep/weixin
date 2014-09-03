@@ -2,7 +2,7 @@ var fs = require('fs');
 var io;
 var path = require('path');
 var logger = require('log4js').getLogger('page:index');
-var extend = require('node.extend');
+var _ = require('underscore');
 require('ozjs');
 
 module.exports = {
