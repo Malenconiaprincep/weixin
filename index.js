@@ -3,7 +3,6 @@ var io;
 var path = require('path');
 var logger = require('log4js').getLogger('page:index');
 var _ = require('underscore');
-require('ozjs');
 
 module.exports = {
     init: function(host) {

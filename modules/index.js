@@ -9,7 +9,7 @@ var db = new DB({
 
 var fetch = function() {
   return function(done) {
-    this.body = {
+    this.locals = {
       ret_code: 0
     };
     done();
@@ -22,7 +22,7 @@ module.exports = {
       app.route('/$').get(function * (next) {
         yield resetctx.call(this);
         yield fetch.call(this);
-        yield response.call(this);
+        yield response.call(this, 'index');
       })
     ];
   },
