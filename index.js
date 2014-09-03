@@ -1,7 +1,6 @@
 var fs = require('fs');
 var io;
 var path = require('path');
-var api = require('./lib/api');
 var logger = require('log4js').getLogger('page:index');
 var extend = require('node.extend');
 require('ozjs');
