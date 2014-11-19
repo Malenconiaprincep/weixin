@@ -2,15 +2,15 @@ extends layouts/layout
 block append head
   title 电视家
   if __env.NODE_ENV === 'production'
-    link(type="text/css",rel="stylesheet",href="/css/index.min.css")
+    link(type="text/css",rel="stylesheet",href=staticBase + "css/index.min.css")
   else
-    link(type="text/css",rel="stylesheet",href="/css/index.css")
+    link(type="text/css",rel="stylesheet",href=staticBase + "css/index.css")
 
 block append main
   span 主内容
 
 block append footer
   if __env.NODE_ENV === 'production'
-    script(type='text/javascript',src="/js/index.min.js")
+    script(type='text/javascript',src=staticBase + "js/index.min.js")
   else
-    script(type='text/javascript',src="/js/index/main.js")
+    script(type='text/javascript',src=staticBase + "js/index/main.js")

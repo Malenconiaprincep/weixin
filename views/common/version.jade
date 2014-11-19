@@ -1,0 +1,4 @@
+if __env.NODE_ENV === 'production' || __env.NODE_ENV === 'test'
+  - var staticBase = 'http://cdn.tvall.cn/browser/20141119145434/'
+else
+  - var staticBase = '/'
