@@ -2,7 +2,7 @@ define(function() {
   var templates = {};
 
   var View = Backbone.View.extend({
-    __base: '/template/modules/',
+    __base: staticBase + 'template/modules/',
     loadTemplate: function(template, callback) {
       if (arguments.length === 1) {
         callback = template;
@@ -36,6 +36,21 @@ define(function() {
       View.views.push(this);
     },
     init: function() {},
+    module: function(name, callback) {
+      var $module = $('[data-module=' + name + ']');
+      if ($module.length > 0) {
+        var module = $module.data('view');
+        if (module) {
+          callback(module);
+        } else {
+          $module.one('viewbind', function() {
+            callback($module.data('view'));
+          });
+        }
+      } else {
+        callback(null);
+      }
+    },
     render: function() {
       var self = this;
       this.buildHtml(function(html) {
