@@ -6,7 +6,8 @@
     "log4js": "0.6.13",
     "mongodb": "*",
     "underscore": "*",
-    "node.extend": "1.1.2"
+    "node.extend": "1.1.2",
+    "jssha": "^1.5.0"
   },
   "devDependencies": {
     "grunt": "^0.4.3",
