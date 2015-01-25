@@ -1,11 +1,12 @@
 {
-  "name": "project name",
+  "name": "weixin",
   "version": "0.0.1",
   "dependencies": {
     "async": "0.7.0",
     "log4js": "0.6.13",
     "mongodb": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "node.extend": "1.1.2"
   },
   "devDependencies": {
     "grunt": "^0.4.3",
