@@ -127,11 +127,11 @@ html
     * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
     */
     wx.config({
-    debug: false,
-    appId: 'wx021658577f951072',
-    timestamp: 1422274668,
-    nonceStr: 'mxm1hz8izfxenrk',
-    signature: '66b45b076847f767ac4f22f33496953ec47ea7cb',
+    debug: true,
+    appId: '#{config.appId}', // 必填，公众号的唯一标识
+              timestamp: #{config.timestamp}, // 必填，生成签名的时间戳
+              nonceStr: '#{config.nonceStr}', // 必填，生成签名的随机串
+              signature: '#{config.signature}', // 必填，签名，见附录1
     jsApiList: [
     'checkJsApi',
     'onMenuShareTimeline',
