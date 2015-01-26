@@ -61,6 +61,17 @@ module.exports = function(grunt) {
     },
 
     ozma: {
+      common: {
+        src: 'static/js/common/main.js',
+        saveConfig: false,
+        debounceDelay: 3000,
+        config: {
+          baseUrl: "static/",
+          distUrl: "dist/",
+          loader: "js/libs/oz.js",
+          disableAutoSuffix: true
+        }
+      },
       index: {
         src: 'static/js/index/main.js',
         saveConfig: false,
