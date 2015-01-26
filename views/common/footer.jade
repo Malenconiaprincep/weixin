@@ -52,7 +52,9 @@ script.
              wx.error(function(res) {
               alert(res.errMsg);
              });
+             alert('=====')
              document.querySelector('#checkJsApi').onclick = function() {
+             alert('checkJsApi')
               wx.checkJsApi({
                   jsApiList: [
                       'getNetworkType',
@@ -63,3 +65,5 @@ script.
                   }
               });
              };
+
+             alert('=====+++++++')
