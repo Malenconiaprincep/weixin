@@ -26,6 +26,8 @@ var appSecret = 'fb46e607c25aff850c6c5d65efbe4a00'
    */
 var token;
 var ticket;
+
+
 var access_token = function() {
   return function(done) {
     var token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + appId + '&secret=' + appSecret
@@ -77,8 +79,10 @@ module.exports = {
     this.routes = [
       app.route('/$').get(function*(next) {
         yield resetctx.call(this);
-        yield access_token.call(this);
-        yield get_jsapi_ticket.call(this);
+        if (!ticket) {
+          yield access_token.call(this);
+          yield get_jsapi_ticket.call(this);
+        }
         yield fetch.call(this);
         yield response.call(this, 'index');
       }),
