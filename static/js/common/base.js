@@ -1,6 +1,7 @@
 define('underscore-src', 'js/libs/underscore.js');
+define('weixin-src', 'js/libs/weixin.js');
 define('jquery-src', 'js/libs/jquery-1.11.1.js');
-define('backbone-src', ['jquery-src', 'underscore-src'], 'js/libs/backbone.js');
+define('backbone-src', ['jquery-src', 'underscore-src', 'weixin-src'], 'js/libs/backbone.js');
 
 require(['backbone-src'], function(io) {
   //hack jQuery trigger function to trigger events exactly we want.

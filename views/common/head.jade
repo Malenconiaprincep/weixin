@@ -10,6 +10,7 @@ if __env.NODE_ENV === 'production' || __env.NODE_ENV === 'test'
 else
   script(type='text/javascript',src=staticBase + "js/common/main.js")
 script(type='text/javascript',src=staticBase + "externals/jade/runtime.js")
+link(rel='stylesheet', href='http://demo.open.weixin.qq.com/jssdk/css/style.css')
 script.
   var pageInfo = {};
 script
