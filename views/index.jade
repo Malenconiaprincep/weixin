@@ -1,10 +1,6 @@
 extends layouts/layout
 block append head
   title 电视家
-  if __env.NODE_ENV === 'production'
-    link(type="text/css",rel="stylesheet",href=staticBase + "css/index.min.css")
-  else
-    link(type="text/css",rel="stylesheet",href=staticBase + "css/index.css")
 
 block append main
   span 主内容
