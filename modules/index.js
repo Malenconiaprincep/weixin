@@ -76,7 +76,7 @@ module.exports = {
         yield access_token.call(this);
         yield get_jsapi_ticket.call(this);
         yield fetch.call(this);
-        yield response.call(this, 'index');
+        yield response.call(this, 'weixin');
       })
     ];
   },
