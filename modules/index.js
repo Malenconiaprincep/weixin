@@ -56,7 +56,7 @@ var get_jsapi_ticket = function() {
 
 var fetch = function() {
   return function(done) {
-    var config = sign(ticket, 'http://www.piaoshihuang.cn');
+    var config = sign(ticket, 'http://piaoshihuang.cn');
     this.result = {
       ret_code: 0,
       config: _.extend(config, {
