@@ -32,6 +32,8 @@ var access_token = function() {
     var self = this;
     request(token_url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
+        logger.info('access_token');
+        logger.info(body);
         token = JSON.parse(body).access_token;
       }
       done();
@@ -45,6 +47,8 @@ var get_jsapi_ticket = function() {
     var jsapi_ticket_url = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + token + '&type=jsapi';
     request(jsapi_ticket_url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
+        logger.info('get_jsapi_ticket');
+        logger.info(body);
         ticket = JSON.parse(body).ticket;
         done();
       }
