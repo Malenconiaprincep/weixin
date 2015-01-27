@@ -167,8 +167,7 @@ html
       document.querySelector('#checkJsApi').onclick = function () {
         wx.checkJsApi({
           jsApiList: [
-            'getNetworkType',
-            'previewImage'
+            'chooseImage'
           ],
           success: function (res) {
             alert(JSON.stringify(res));
