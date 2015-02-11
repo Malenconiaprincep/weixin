@@ -8,6 +8,7 @@ var request = require('request');
 var db = new DB({
   database: 'browser'
 });
+var cache = {};
 
 var sign = require('../lib/sign.js');
 
@@ -62,10 +63,12 @@ var get_jsapi_ticket = function() {
 
 var fetch = function() {
   return function(done) {
-    var config = sign(ticket, 'http://piaoshihuang.cn');
+    if (!cache.config) {
+      cache.config = sign(ticket, 'http://piaoshihuang.cn');
+    }
     this.result = {
       ret_code: 0,
-      config: _.extend(config, {
+      config: _.extend(cache.config, {
         appId: appId
       })
     };
@@ -79,12 +82,13 @@ module.exports = {
     this.routes = [
       app.route('/$').get(function*(next) {
         yield resetctx.call(this);
+        this.json = true;
         if (!ticket) {
           yield access_token.call(this);
           yield get_jsapi_ticket.call(this);
         }
         yield fetch.call(this);
-        yield response.call(this, 'weixin');
+        yield response.call(this);
       }),
       app.route('/demo$').get(function*(next) {
         yield resetctx.call(this);
