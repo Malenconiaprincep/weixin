@@ -60,16 +60,17 @@ var get_jsapi_ticket = function() {
 
 var fetch = function() {
   return function(done) {
+    var url = 'http://piaoshihuang.cn/';
     if (!cache.config) {
-      cache.config = sign(ticket, 'http://piaoshihuang.cn/');
+      cache.config = sign(ticket, url);
     }
     this.set('Access-Control-Allow-Origin', '*');
     this.set('Access-Control-Allow-Credentials', 'true');
     this.result = {
-      nonceStr: config.nonceStr,
-      timestamp: config.timestamp,
+      nonceStr: cache.config.nonceStr,
+      timestamp: cache.config.timestamp,
       appid: appId,
-      signature: config.signature,
+      signature: cache.config.signature,
       url: url
     };
 
