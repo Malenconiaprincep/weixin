@@ -33,6 +33,7 @@ var access_token = function() {
   return function(done) {
     var token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + appId + '&secret=' + appSecret
     var self = this;
+    console.log(token_url);
     request(token_url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
         logger.info('access_token');
@@ -71,7 +72,7 @@ var fetch = function() {
     this.result = {
       ret_code: 0,
       config: _.extend(cache.config, {
-        appId: appId
+        appid: appId
       })
     };
 
@@ -87,7 +88,7 @@ module.exports = {
         this.json = true;
         if (!ticket) {
           yield access_token.call(this);
-          yield get_jsapi_ticket.call(this);
+          // yield get_jsapi_ticket.call(this);
         }
         yield fetch.call(this);
         yield response.call(this);
