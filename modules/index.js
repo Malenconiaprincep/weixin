@@ -51,7 +51,7 @@ var get_jsapi_ticket = function(resp) {
         resp = JSON.parse(body);
       }
       var ticket = resp.ticket;
-      var url = 'http://piaoshihuang.cn/';
+      var url = 'http://piaoshihuang.cn';
       var config = sign(ticket, url);
       logger.info(config);
 
