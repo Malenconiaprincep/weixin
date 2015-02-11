@@ -66,10 +66,11 @@ var fetch = function() {
     this.set('Access-Control-Allow-Origin', '*');
     this.set('Access-Control-Allow-Credentials', 'true');
     this.result = {
-      ret_code: 0,
-      config: _.extend(cache.config, {
-        appid: appId
-      })
+      nonceStr: config.nonceStr,
+      timestamp: config.timestamp,
+      appid: appId,
+      signature: config.signature,
+      url: url
     };
 
     done();
