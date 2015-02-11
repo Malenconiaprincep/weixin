@@ -54,6 +54,9 @@ var get_jsapi_ticket = function(resp) {
       var url = 'http://piaoshihuang.cn/';
       var config = sign(ticket, url);
       logger.info(config);
+
+      self.set('Access-Control-Allow-Origin', '*');
+      self.set('Access-Control-Allow-Credentials', 'true');
       self.result = {
         nonceStr: config.nonceStr,
         timestamp: config.timestamp,
