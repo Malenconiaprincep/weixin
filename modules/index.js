@@ -66,6 +66,8 @@ var fetch = function() {
     if (!cache.config) {
       cache.config = sign(ticket, 'http://piaoshihuang.cn');
     }
+    this.set('Access-Control-Allow-Origin', '*');
+    this.set('Access-Control-Allow-Credentials', 'true');
     this.result = {
       ret_code: 0,
       config: _.extend(cache.config, {
