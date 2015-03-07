@@ -4,7 +4,6 @@ block append head
 
 block append main
   span 主内容
-   include ../static/modules/weixin/index
 block append footer
   if __env.NODE_ENV === 'production'
     script(type='text/javascript',src=staticBase + "js/index.min.js")
