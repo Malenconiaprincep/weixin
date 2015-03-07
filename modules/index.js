@@ -83,7 +83,6 @@ module.exports = {
     this.routes = [
       app.route('/$').get(function*(next) {
         yield resetctx.call(this);
-        this.json = true;
         if (!ticket) {
           yield access_token.call(this);
           yield get_jsapi_ticket.call(this);
